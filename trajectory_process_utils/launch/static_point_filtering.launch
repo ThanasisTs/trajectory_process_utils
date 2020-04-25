@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+	<node name="static_points_filtering_server" type="static_points_filtering_server.py" pkg="trajectory_point_process" output="screen" respawn="false">
+		<rosparam file="$(find trajectory_point_process)/config/static_point_filtering.yaml"/>
+	</node>
+</launch>

@@ -1,0 +1,12 @@
+#goal definition
+float64[] x_raw
+float64[] y_raw
+float64[] z_raw
+---
+#result definition
+float64[] x_smooth
+float64[] y_smooth
+float64[] z_smooth
+---
+#feedback
+bool feedback_flag
