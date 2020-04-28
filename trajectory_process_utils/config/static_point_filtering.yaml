@@ -1,4 +1,4 @@
-median_threshold: 12
-boundX: 0.012
-boundY: 0.012
-boundΖ: 0.012
+num_median_points: 12
+thresX: 0.012
+thresY: 0.012
+thresΖ: 0.012

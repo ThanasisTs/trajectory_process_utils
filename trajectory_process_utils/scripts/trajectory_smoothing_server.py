@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import rospy
 import sys
-from trajectory_point_process_msgs.srv import *
+from trajectory_process_utils_srvs.srv import *
 from scipy.spatial import distance
 
 from smooth_files import trajectory_smoothing_function, functions
