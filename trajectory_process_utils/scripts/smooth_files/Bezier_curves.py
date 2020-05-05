@@ -3,7 +3,7 @@ from collections import deque
 
 
 class BezierCurve:
-    RANGE_STEP = 1000
+    RANGE_STEP = 20
 
     def __init__(self):
         self.control_points = []

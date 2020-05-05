@@ -14,6 +14,7 @@ def handle_smoothing(req):
 	x_1,y_1,z_1 = trajectory_smoothing_function.main(x,y,z)
 	x_smooth,y_smooth,z_smooth = [x_1[0]],[y_1[0]],[z_1[0]]
 
+	print (len(x_1))
 	a = (x_1[0],y_1[0],z_1[0])
 	for i in range(len(x_1)):
 		b = (x_1[i],y_1[i],z_1[i])
@@ -26,9 +27,9 @@ def handle_smoothing(req):
 			a = (x_1[i],y_1[i],z_1[i])
 
 	rospy.loginfo("Wait to plot the trajectory")
-	functions.print2D([x,y,z],[x_smooth,y_smooth,z_smooth])
-	functions.print3D([x,y,z],[x_smooth,y_smooth,z_smooth])
-
+	# functions.print2D([x,y,z],[x_smooth,y_smooth,z_smooth])
+	# functions.print3D([x,y,z],[x_smooth,y_smooth,z_smooth])
+	print (len(x_smooth))
 	return SmoothingResponse(x_smooth,y_smooth,z_smooth)
 
 
