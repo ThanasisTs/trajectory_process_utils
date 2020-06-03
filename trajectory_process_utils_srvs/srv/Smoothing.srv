@@ -5,3 +5,6 @@ float64[] z
 float64[] x_smooth 
 float64[] y_smooth
 float64[] z_smooth
+float64[] x_smooth_all 
+float64[] y_smooth_all
+float64[] z_smooth_all
