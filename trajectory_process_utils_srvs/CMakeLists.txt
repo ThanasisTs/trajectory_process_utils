@@ -5,7 +5,6 @@ find_package(catkin REQUIRED COMPONENTS
   message_generation
   roscpp
   rospy
-  trajectory_execution_msgs
 )
 
 
@@ -19,13 +18,12 @@ add_service_files(
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
   DEPENDENCIES
-  trajectory_execution_msgs
 )
 
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES trajectory_process_utils_srvs
- CATKIN_DEPENDS message_generation roscpp rospy trajectory_execution_msgs
+ CATKIN_DEPENDS message_generation roscpp rospy 
 #  DEPENDS system_lib
 )
 

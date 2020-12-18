@@ -4,7 +4,7 @@ project(trajectory_process_utils)
 find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
-  trajectory_execution_msgs
+  trajectory_custom_msgs
 )
 
 include_directories(

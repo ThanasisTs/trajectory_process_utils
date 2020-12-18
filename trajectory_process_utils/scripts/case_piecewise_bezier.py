@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import rospy
-from trajectory_execution_msgs.msg import PointArray
+from trajectory_custom_msgs.msg import PointArray
 from keypoint_3d_matching_msgs.msg import Keypoint3d_list
 from geometry_msgs.msg import Point
 from geometry_msgs.msg import PointStamped
