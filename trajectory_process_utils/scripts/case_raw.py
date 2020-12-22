@@ -9,7 +9,7 @@ import numpy as np
 pub = None
 x, y, z = [], [], []
 x_mov, y_mov, z_mov = [], [], []
-init_flag, start = False, False
+init_flag, start = True, False
 count = 0
 end = False
 
@@ -34,18 +34,18 @@ def callback(msg):
 				y.append(y_point)
 				z.append(z_point)
 	
-	# Average the 15 first points to get the first point 
-	# in order to avoid the case where the first point is outlier
-	if not init_flag and len(x) == 15:
-		init_point = PointStamped()
-		init_point.header.stamp = time_point
-		init_point.point.x = np.mean(x)
-		init_point.point.y = np.mean(y)
-		init_point.point.z = np.mean(z)
-		pub.publish(init_point)
-		init_flag = True
-		rospy.loginfo("Published initial point")
-		print (init_point)
+	# # Average the 15 first points to get the first point 
+	# # in order to avoid the case where the first point is outlier
+	# if not init_flag and len(x) == 15:
+	# 	init_point = PointStamped()
+	# 	init_point.header.stamp = time_point
+	# 	init_point.point.x = np.mean(x)
+	# 	init_point.point.y = np.mean(y)
+	# 	init_point.point.z = np.mean(z)
+	# 	pub.publish(init_point)
+	# 	init_flag = True
+	# 	rospy.loginfo("Published initial point")
+	# 	print (init_point)
 
 	if init_flag:
 		# Check for outliers or zeros (invalid trajectory points)
