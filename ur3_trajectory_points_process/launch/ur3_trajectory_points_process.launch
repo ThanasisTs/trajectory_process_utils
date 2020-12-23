@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<launch>
-	<node name="ur3_trajectory_points_process_node" type="ur3_trajectory_points_process" pkg="ur3_trajectory_points_process" respawn="false" output="screen">
-		<rosparam file="$(find ur3_trajectory_points_process)/config/ur3_trajectory_points_process.yaml"/>
-	</node>
-
-	<include file="$(find check_keypoints_placement)/launch/check_keypoints_placement.launch">
-	</include>
-</launch>

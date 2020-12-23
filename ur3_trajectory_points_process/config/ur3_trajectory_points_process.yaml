@@ -1,8 +1,0 @@
-# Self collision distance
-self_collision_limit: 0.23
-z_limit: 0.23
-
-# Extention distance
-overextension_limit: 0.56 #0.56-0.03
-
-new_offset_points: 25
