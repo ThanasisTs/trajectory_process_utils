@@ -1,0 +1,5 @@
+<?xml version="1.0" ?>
+<launch>
+	<node name="trajectory_smoothing_node" type="trajectory_smoothing_server.py" pkg="offline_trajectory_process" output="log" respawn="false">
+	</node>
+</launch>
