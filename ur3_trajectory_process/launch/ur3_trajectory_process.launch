@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+	<node name="ur3_trajectory_process_node" type="ur3_trajectory_process" pkg="ur3_trajectory_process" respawn="false" output="screen">
+		<rosparam file="$(find ur3_trajectory_process)/config/ur3_trajectory_process.yaml"/>
+	</node>
+
+	<include file="$(find keypoints_relative_pos)/launch/keypoints_relative_pos.launch">
+	</include>
+</launch>
