@@ -1,0 +1,5 @@
+num_points_std: 24
+std_threshold: 0.01
+num_outliers: 10
+smooth_service_name: "trajectory_smoothing"
+filter_service_name: "static_points_filtering"

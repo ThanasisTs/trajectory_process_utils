@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+	<arg name="filter" default="false"/>
+	<arg name="smooth" default="false"/>
+
+	<node name="movement_detection_node" type="movement_detection.py" pkg="movement_detection" output="screen" respawn="false">
+		<param name="smooth" value="$(arg smooth)"/>
+		<param name="filter" value="$(arg filter)"/>
+		<rosparam file="$(find movement_detection)/config/movement_detection.yaml" command="load"/>
+	</node>
+
+</launch>
