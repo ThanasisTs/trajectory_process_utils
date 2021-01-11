@@ -1,13 +1,12 @@
 #include <ur3_trajectory_process/ur3_trajectory_process.h>
 
 extern bool check_robot_limits (const geometry_msgs::PointConstPtr candidate_point);
-extern void calculateSTD (const trajectory_custom_msgs::PointStampedArray::ConstPtr points_array);
+extern std::vector<double> calculateSTD (const trajectory_custom_msgs::PointStampedArray::ConstPtr points_array);
 extern void compute_new_offset (const geometry_msgs::PointStamped::ConstPtr new_trajectory_point);
 
 
 void halt_motion_callback(const std_msgs::Bool::ConstPtr halt_motion_msg){
 	halt_motion = halt_motion_msg->data;
-	halt_motion = false;
 }
 
 void ee_state_callback(const cartesian_state_msgs::PoseTwist::ConstPtr state_msg){
@@ -75,7 +74,7 @@ int main(int argc, char** argv){
 	ros::Subscriber trajectory_points_sub = nh.subscribe("/trajectory_points", 100, trajectory_points_callback);
 	
 	// Halt motion (left arm) subscriber
-	ros::Subscriber check_keypoints_placement_sub = nh.subscribe("/check_keypoints_placement_topic", 100, halt_motion_callback);
+	ros::Subscriber check_keypoints_placement_sub = nh.subscribe("//keypoints_relative_pos_topic", 100, halt_motion_callback);
 
 	ros::spin();
 }
