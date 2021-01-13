@@ -13,3 +13,10 @@ is done. This results in a piecewize Bezier smoothed traejectory.
 Additionally, when the distance between consecutive points is greater than a predetermined threshold, artificial points are interpolated across the line segment
 connecting these two points. If the distance is smaller than another predefined threshold, then the second point is discarded. This procedure yields a trajectory
 whose points are more equidistant than the raw one.
+
+In the following plot, the resulting trajectory from the `piecewise_bezier_process` is shown in orange
+<img src="https://github.com/ThanasisTs/trajectory_process_utils/blob/master/online_trajectory_process/PW_BZ.png" width="1000" height="500">
+
+
+In the following plot, the resulting trajectory from the `downsampling_interpolation` is shown in red
+<img src="https://github.com/ThanasisTs/trajectory_process_utils/blob/master/online_trajectory_process/DI.png" width="1000" height="500">
