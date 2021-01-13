@@ -18,12 +18,12 @@ service request and returns the corresponding cleaned trajectory in the form of 
 In the following plot, blue points correspond to all the recorded points, orange to the final filtered trajectory before passing it to the `trajectory_smoothing_server`
 red to the points indicating the start of the motion and green the points filtered by the `static_points_filtering_server`
 
-<img src="https://github.com/ThanasisTs/trajectory_process_utils/blob/master/md_z_n.png" width="1000" height="600">
+<img src="https://github.com/ThanasisTs/trajectory_process_utils/blob/master/offline_trajectory_process/md_z_n.png" width="1000" height="600">
 
 In the following plot, orange points correspond to the raw final filtered trajectory and blue to the smoothed trajectory produced by the `trajectory_smoothing_server`
 
-<img src="https://github.com/ThanasisTs/trajectory_process_utils/blob/master/raw_smooth.png" width="1000">
+<img src="https://github.com/ThanasisTs/trajectory_process_utils/blob/master/offline_trajectory_process/raw_smooth.png" width="1000">
 
 In the following figure, a block diagram of the whole pipeline implemented in `movement_detection.py` is shown
 
-<img src="https://github.com/ThanasisTs/trajectory_process_utils/blob/master/block_diagram.png" width="500">
+<img src="https://github.com/ThanasisTs/trajectory_process_utils/blob/master/offline_trajectory_process/block_diagram.png" width="500">
