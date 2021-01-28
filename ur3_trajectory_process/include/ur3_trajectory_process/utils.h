@@ -15,4 +15,3 @@ extern boost::shared_ptr<trajectory_custom_msgs::PointStampedArray> new_trajecto
 extern float xOffset, yOffset, zOffset;
 extern float self_collision_limit, z_limit, overextension_limit;
 extern int new_offset_points;
-std::vector<double> points_std;

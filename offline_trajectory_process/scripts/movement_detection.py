@@ -26,27 +26,27 @@ def callback(data, args):
 	if movement_recording:
 
 		# Comment this block of code if not using input of type geometry_msgs/Point 
-		x_tmp = data.x
-		y_tmp = data.y
-		z_tmp = data.z
-		timestamp = rospy.get_time()
-		count += 1
-		try:
-			# rospy.loginfo("Time duration: %f"%(rospy.Time.now().to_sec() - timenow))
-			times.append(rospy.Time.now().to_sec() - timenow)
-		except Exception as e:
-			rospy.logwarn(e)
-		timenow = rospy.Time.now().to_sec()
+		# x_tmp = data.x
+		# y_tmp = data.y
+		# z_tmp = data.z
+		# timestamp = rospy.get_time()
+		# count += 1
+		# try:
+		# 	# rospy.loginfo("Time duration: %f"%(rospy.Time.now().to_sec() - timenow))
+		# 	times.append(rospy.Time.now().to_sec() - timenow)
+		# except Exception as e:
+		# 	rospy.logwarn(e)
+		# timenow = rospy.Time.now().to_sec()
 
 		# Uncomment this block of code when using input of type Keypoints_list
-		# for i in range(len(data.keypoints)):
-		# 	if (data.keypoints[i].name == "RWrist"):
-		# 		x_tmp = data.keypoints[i].points.point.x
-		# 		y_tmp = data.keypoints[i].points.point.y
-		# 		z_tmp = data.keypoints[i].points.point.z
-		# 		timestamp = rospy.get_time()
-		# 		count += 1
-		# 		break
+		for i in range(len(data.keypoints)):
+			if (data.keypoints[i].name == "RWrist"):
+				x_tmp = data.keypoints[i].points.point.x
+				y_tmp = data.keypoints[i].points.point.y
+				z_tmp = data.keypoints[i].points.point.z
+				timestamp = rospy.get_time()
+				count += 1
+				break
 		if x_tmp != 0 and y_tmp != 0 and z_tmp != 0:
 			if len(xRaw) == 0 or (len(xRaw) >= 1 and abs(xRaw[-1] - x_tmp) < 0.1 and abs(yRaw[-1] - y_tmp) < 0.1 and abs(zRaw[-1] - z_tmp) < 0.1):
 				xRaw.append(x_tmp)
@@ -107,11 +107,11 @@ def movement_detection_node():
 
 	# Use the following subscription if you use the movement detection function
 	# using Openpose and the custom message Keypoint3d_list
-	# sub = rospy.Subscriber('raw_points_online', Keypoint3d_list, callback, num_points_std)
+	sub = rospy.Subscriber('/transform_topic', Keypoint3d_list, callback, num_points_std)
 	
 	# Use the following subscription if you use the movement detection function
 	# using a geometry_msgs/Point msg for each point
-	sub = rospy.Subscriber('raw_points', Point, callback, num_points_std)
+	# sub = rospy.Subscriber('raw_points', Point, callback, num_points_std)
 	
 	pub = rospy.Publisher('/trajectory_points', PointStampedArray, queue_size=10)
 	raw_pub = rospy.Publisher('/raw_movement_points', Point, queue_size=10)
